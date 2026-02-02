@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^5.0.0",
+    "tailwindcss": "^4.1.18"
+  }
+}

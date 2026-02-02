@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+body{
+    height: 80px;
+}
+
+button {
+
+    background-color: black;
+}
+
+h1{ font-weight: 700; font-size: larger;
+position:relative;bottom: 300px; text-align: center; color: white;
+}
+
+.han{
+
+    position: relative;bottom: 300px; width: 30%; margin: auto; margin-top: 30px; padding: 5px; border-radius: 5px;
+    background-color: white;
+}
+
+.tim{
+    position: relative;bottom: 230px; padding: 10px; padding-top: 10px; padding-bottom: 0;
+}
+
+.jin{
+     position: relative;bottom: 350px; left: 820px; padding: 19px; 
+}
+
