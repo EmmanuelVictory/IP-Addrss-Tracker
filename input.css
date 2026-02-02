@@ -28,5 +28,5 @@ position:relative;bottom: 300px; text-align: center; color: white;
 }
 
 .di{
-    width: 30%; margin: auto;
+     position: relative; bottom: 100px; left: 600px;
 }
