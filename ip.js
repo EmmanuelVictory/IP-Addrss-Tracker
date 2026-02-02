@@ -18,10 +18,11 @@ function MapView() {
       />
 
       <Marker position={[51.505, -0.09]}>
-        <Popup>Hello Lagos 🇳🇬</Popup>
+        <Popup>Hello </Popup>
       </Marker>
     </MapContainer>
   );
 }
 
 export default MapView;
+
