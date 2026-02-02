@@ -20,10 +20,13 @@ position:relative;bottom: 300px; text-align: center; color: white;
 }
 
 .tim{
-    position: relative;bottom: 230px; padding: 10px; padding-top: 10px; padding-bottom: 0;
+    position: relative;bottom: 230px; padding: 10px; padding-top: 10px; padding-bottom: 0; 
 }
 
 .jin{
      position: relative;bottom: 350px; left: 820px; padding: 19px; 
 }
 
+.di{
+    width: 30%; margin: auto;
+}
