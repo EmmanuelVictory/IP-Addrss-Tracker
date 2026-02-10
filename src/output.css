@@ -10,6 +10,7 @@
     --color-slate-400: oklch(70.4% 0.04 256.788);
     --color-slate-600: oklch(44.6% 0.043 257.281);
     --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -25,6 +26,8 @@
     --font-weight-bold: 700;
     --tracking-wide: 0.025em;
     --radius-lg: 0.5rem;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -193,8 +196,14 @@
   .grid {
     display: grid;
   }
+  .table {
+    display: table;
+  }
   .h-80 {
     height: calc(var(--spacing) * 80);
+  }
+  .min-h-screen {
+    min-height: 100vh;
   }
   .w-full {
     width: 100%;
@@ -204,6 +213,12 @@
   }
   .max-w-6xl {
     max-width: var(--container-6xl);
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -225,8 +240,15 @@
     border-top-right-radius: var(--radius-lg);
     border-bottom-right-radius: var(--radius-lg);
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .bg-black {
     background-color: var(--color-black);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -272,9 +294,21 @@
   .uppercase {
     text-transform: uppercase;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .hover\:opacity-60 {
     &:hover {
@@ -310,47 +344,10 @@
     }
   }
 }
-body {
-  height: 80px;
-}
-button {
-  background-color: black;
-}
-h1 {
-  font-weight: 700;
-  font-size: larger;
-  position: relative;
-  bottom: 300px;
-  text-align: center;
-  color: white;
-}
-.han {
-  position: relative;
-  bottom: 300px;
-  width: 30%;
-  margin: auto;
-  margin-top: 30px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: white;
-}
-.tim {
-  position: relative;
-  bottom: 230px;
-  padding: 10px;
-  padding-top: 10px;
-  padding-bottom: 0;
-}
-.jin {
-  position: relative;
-  bottom: 350px;
-  left: 820px;
-  padding: 19px;
-}
-.di {
-  position: relative;
-  bottom: 100px;
-  left: 600px;
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -425,9 +422,15 @@ h1 {
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-shadow: 0 0 #0000;
@@ -444,6 +447,7 @@ h1 {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
     }
   }
 }
