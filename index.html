@@ -165,6 +165,8 @@
     word-break: break-all; align-items: center;
   }
 }
+
+
   </style>
 </head>
 <body>
@@ -216,15 +218,26 @@
     }
 
     async function fetchIP(query) {
-      try {
-        const url = query ? `https://ipwho.is/${query}` : 'https://ipwho.is/';
-        const res = await fetch(url);
-        const d = await res.json();
-        if (d.success === false) { alert(d.message || 'Not found'); return; }
-        setInfo(d.ip, `${d.city}, ${d.region} ${d.postal}`, `UTC ${d.timezone?.utc || ''}`, d.connection?.isp || d.connection?.org || '');
-        updateMap(d.latitude, d.longitude);
-      } catch { alert('Failed to fetch IP data'); }
-    }
+  try {
+    const proxy = "https://cors-anywhere.herokuapp.com/";
+    const url = query ? `https://ipapi.co/${query}/json/` : 'https://ipapi.co/json/';
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to fetch IP data');
+    const data = await res.json();
+
+    // Some properties may differ by API
+    const ip = data.ip || 'N/A';
+    const location = `${data.city || 'N/A'}, ${data.region || 'N/A'} ${data.postal || ''}`;
+    const timezone = data.timezone || 'N/A';
+    const isp = data.org || data.isp || 'N/A'; // Try multiple keys
+
+    setInfo(ip, location, `UTC ${timezone}`, isp);
+    updateMap(data.latitude, data.longitude);
+
+  } catch (err) {
+    alert('Failed to fetch IP data: ' + err.message);
+  }
+}
 
     document.getElementById('searchForm').addEventListener('submit', e => {
       e.preventDefault();
