@@ -20,7 +20,7 @@ When I started this project, I set clear goals for myself:
 - Integrate a third-party map library
 - Improve my debugging and error-handling skills
 
-This project was less about design and more about logic, structure, and real-world functionality.
+This project was less about design and more about logic, structure and real-world functionality.
 
 
 
@@ -32,7 +32,7 @@ This project was less about design and more about logic, structure, and real-wor
 - **Leaflet.js** – Rendered interactive maps
 - **IP Geolocation API** – Retrieved IP address details
 
-Everything works dynamically on the client side, and all updates happen without refreshing the page.
+Everything works dynamically on the client side and all updates happen without refreshing the page.
 
 
 
