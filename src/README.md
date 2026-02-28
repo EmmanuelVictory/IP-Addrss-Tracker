@@ -2,7 +2,7 @@
 
 ## 🧠 About This Project
 
-I built this IP Address Tracker to challenge myself to work with real-time data and external APIs. I didn’t want to just design a static interface — I wanted to create something functional and dynamic that responds to user input instantly.
+I built this IP Address Tracker to challenge myself to work with real-time data and external APIs. I didn’t want to just design a static interface. I wanted to create something functional and dynamic that responds to user input instantly.
 
 This project represents a step forward in my journey as a developer. It pushed me to go beyond basic DOM manipulation and start working with asynchronous JavaScript in a practical way.
 
@@ -115,4 +115,4 @@ It represents growth in my development journey.
 
 ## 📎 Live Demo
 
-[Add your live demo link here]
+[https://ip-address-tracker-bice-three.vercel.app/]
