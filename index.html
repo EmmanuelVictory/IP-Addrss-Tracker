@@ -219,8 +219,8 @@
 
     async function fetchIP(query) {
   try {
-    const proxy = "https://cors-anywhere.herokuapp.com/";
-    const url = query ? `https://ipapi.co/${query}/json/` : 'https://ipapi.co/json/';
+    // const proxy = "https://cors-anywhere.herokuapp.com/";
+  const url = query ? `https://ipapi.co/${query}/json/` : 'https://ipapi.co/json/';
     const res = await fetch(url);
     if (!res.ok) throw new Error('Failed to fetch IP data');
     const data = await res.json();
